@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
+// Aquí vas a importar tus controladores
+// use App\Http\Controllers\NombreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/* Ruta Login */
 Route::get('/', function () {
     return view('auth/login');
 });
@@ -20,3 +23,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/* Ruta Login */
+Route::resources([
+    'students' => StudentController::class,
+    // Aquí vas a agregar tusnuevas rutas de tipo resource
+    // 'nombreRuta' => NombreController::class,
+]);
