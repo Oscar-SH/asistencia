@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->string('name', 200);
             $table->string('ncontrol', 45);
             $table->string('lname', 200);
-            $table->boolean('status');
+            $table->string('status');
             $table->timestamps();
         });
     }

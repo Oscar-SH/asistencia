@@ -28,7 +28,13 @@
         <a href="/home" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('students.index') }}" class="nav-link">Estudiantes</a>
+        <a href="{{ route('student.index') }}" class="nav-link">Estudiantes</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('subject.index') }}" class="nav-link">Materias</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('teacher.index') }}" class="nav-link">Docentes</a>
       </li>
     </ul>
 

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherController;
 // Aquí vas a importar tus controladores
 // use App\Http\Controllers\NombreController;
 
@@ -24,9 +26,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/* Ruta Login */
+/* Rutas para vistas */
 Route::resources([
-    'students' => StudentController::class,
-    // Aquí vas a agregar tusnuevas rutas de tipo resource
-    // 'nombreRuta' => NombreController::class,
+    'student' => StudentController::class,
+    'subject' => SubjectController::class,
+    'teacher' => TeacherController::class,
 ]);

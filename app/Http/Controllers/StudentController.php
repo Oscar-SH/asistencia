@@ -14,7 +14,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('students.index');
+        $student = Student::latest()->paginate(5);
+        
+        return view('student.index', compact('student'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
@@ -24,7 +26,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('student.create');
     }
 
     /**
@@ -35,7 +37,17 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'name' => 'required',
+                'lname' => 'required',
+                'ncontrol' => 'required',
+                'status' => 'required'
+            ]
+        );
+
+        Student::create($request->all());
+        return redirect()->route('student.index');
     }
 
     /**
@@ -46,7 +58,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return view('student.show', compact('student'));
     }
 
     /**
@@ -57,7 +69,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('student.edit', compact('student'));
     }
 
     /**
@@ -69,7 +81,17 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $request->validate(
+            [
+                'name' => 'required',
+                'lname' => 'required',
+                'ncontrol' => 'required',
+                'status' => 'required'
+            ]
+        );
+
+        $student->update($request->all());
+        return redirect()->route('student.index');
     }
 
     /**
@@ -80,6 +102,7 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return redirect()->route('student.index');
     }
 }
