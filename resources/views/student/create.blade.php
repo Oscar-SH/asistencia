@@ -1,7 +1,7 @@
 @extends('layout.navbar')
 @section('content')
 
-<title>ESTUDIANTES</title>
+<title>Estudiantes</title>
 
     <div class="row">
     <div class="col"></div>
@@ -19,10 +19,6 @@
             <div>
             <label for="">Numero de control</label>
             <input class="form-control" placeholder="Numero de control" type="text" name="ncontrol">
-            </div>
-            <div>
-            <label for="">Estado</label>
-            <input class="form-control" placeholder="Estado" type="text" name="status">
             </div>
             <br>
             <div>

@@ -37,7 +37,15 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'nmateria' => 'required',
+                'clave' => 'required'
+            ]
+        );
+
+        Subject::create($request->all());
+        return redirect()->route('subject.index'); 
     }
 
     /**
@@ -48,7 +56,7 @@ class SubjectController extends Controller
      */
     public function show(Subject $subject)
     {
-        //
+        return view('subject.show', compact('subject'));
     }
 
     /**
@@ -59,7 +67,7 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
-        //
+        return view('subject.edit', compact('subject'));
     }
 
     /**
@@ -71,7 +79,15 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
-        //
+        $request->validate(
+            [
+                'nmateria' => 'required',
+                'clave' => 'required'
+            ]
+        );
+
+        $subject->update($request->all());
+        return redirect()->route('subject.index');
     }
 
     /**
@@ -82,6 +98,7 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        //
+        $subject->delete();
+        return redirect()->route('subject.index');
     }
 }

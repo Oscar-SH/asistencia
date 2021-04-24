@@ -1,6 +1,6 @@
 @extends('layout.navbar')
 @section('content')
-<title>ESTUDIANTES</title>
+<title>Estudiantes</title>
 
 
 <div class="row">
@@ -13,7 +13,6 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">{{ ($student->ncontrol) }}</li>
-                <li class="list-group-item">{{ ($student->status) }}</li>
             </ul>
             <div class="card-body">
                 <form action="{{ route('student.destroy', $student->id) }}" method="POST">

@@ -41,8 +41,7 @@ class StudentController extends Controller
             [
                 'name' => 'required',
                 'lname' => 'required',
-                'ncontrol' => 'required',
-                'status' => 'required'
+                'ncontrol' => 'required'
             ]
         );
 
@@ -85,8 +84,7 @@ class StudentController extends Controller
             [
                 'name' => 'required',
                 'lname' => 'required',
-                'ncontrol' => 'required',
-                'status' => 'required'
+                'ncontrol' => 'required'
             ]
         );
 

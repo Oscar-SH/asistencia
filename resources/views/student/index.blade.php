@@ -34,7 +34,16 @@
                 <td>{{ $stu->name }}</td>
                 <td>{{ $stu->lname }}</td>
                 <td>{{ $stu ->ncontrol }}</td>
-                <td>{{ $stu->status }}</td>
+                <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">Asistio</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">No Asistio</label>
+                </div>
+                </td>
                 <td>
                     <form action="{{ route('student.destroy', $stu->id) }}" method="POST">
                         <a class="btn btn-dark btn-sm" href="{{ route('student.show', $stu->id) }}">VER</a>

@@ -37,7 +37,17 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'namet' => 'required',
+                'lnamet' => 'required',
+                'horario' => 'required',
+                'contacto' => 'required'
+            ]
+        );
+
+        Teacher::create($request->all());
+        return redirect()->route('teacher.index'); 
     }
 
     /**
@@ -48,7 +58,7 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
-        //
+        return view('teacher.show', compact('teacher'));
     }
 
     /**
@@ -59,7 +69,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        //
+        return view('teacher.edit', compact('teacher'));
     }
 
     /**
@@ -71,7 +81,17 @@ class TeacherController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        //
+        $request->validate(
+            [
+                'namet' => 'required',
+                'lnamet' => 'required',
+                'horario' => 'required',
+                'contacto' => 'required'
+            ]
+        );
+
+        $teacher->update($request->all());
+        return redirect()->route('teacher.index');
     }
 
     /**
@@ -82,6 +102,7 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        //
+        $teacher->delete();
+        return redirect()->route('teacher.index');
     }
 }

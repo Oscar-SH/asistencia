@@ -36,9 +36,9 @@
                 <td>{{ $tea->horario }}</td>
                 <td>{{ $tea->contacto }}</td>
                 <td>
-                    <form action="{{ route('subject.destroy', $tea->id) }}" method="POST">
-                        <a class="btn btn-dark btn-sm" href="{{ route('subject.show', $tea->id) }}">VER</a>
-                        <a class="btn btn-dark btn-sm" href="{{ route('subject.edit', $tea->id) }}">EDITAR</a>
+                    <form action="{{ route('teacher.destroy', $tea->id) }}" method="POST">
+                        <a class="btn btn-dark btn-sm" href="{{ route('teacher.show', $tea->id) }}">VER</a>
+                        <a class="btn btn-dark btn-sm" href="{{ route('teacher.edit', $tea->id) }}">EDITAR</a>
                         @csrf
                         @method('DELETE')
                         <input class="btn btn-dark btn-sm" type="submit" value="Eliminar">
