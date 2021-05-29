@@ -20,6 +20,10 @@
             <label for="">Numero de control</label>
             <input class="form-control" placeholder="Numero de control" type="text" name="ncontrol">
             </div>
+            <div>
+            <label for="">Estado</label>
+            <input class="form-control" placeholder="Estado" type="text" name="status">
+            </div>
             <br>
             <div>
             <input class="btn btn-dark" type="reset" value="Limpiar">

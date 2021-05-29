@@ -2,7 +2,7 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,8 @@
                 <td>{{ $stu->id }}</td>
                 <td>{{ $stu->name }}</td>
                 <td>{{ $stu->lname }}</td>
-                <td>{{ $stu ->ncontrol }}</td>
+                <td>{{ $stu->ncontrol }}</td>
+                <td>{{ $stu->status }}</td>
                 <td>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">

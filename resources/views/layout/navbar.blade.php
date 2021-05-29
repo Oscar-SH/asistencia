@@ -33,6 +33,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('teacher.index') }}" class="nav-link">Docentes</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ route('gropu.index') }}" class="nav-link">Datos</a>
+      </li>
     </ul>
 </div>
 

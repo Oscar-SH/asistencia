@@ -21,6 +21,10 @@
             <label for="">Numero de control</label>
             <input class="form-control" value="{{ $student->ncontrol }}" type="text" name="ncontrol">
             </div>
+            <div>
+            <label for="">Estado</label>
+            <input class="form-control" value="{{ $student->status }}" type="text" name="status">
+            </div>
             <br>
             <div>
             <input class="btn btn-dark" type="reset" value="Limpiar">

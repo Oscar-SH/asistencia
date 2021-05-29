@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\GropuController;
+use App\Http\Controllers\AsistenController;
 // Aquí vas a importar tus controladores
 // use App\Http\Controllers\NombreController;
 
@@ -31,4 +33,12 @@ Route::resources([
     'student' => StudentController::class,
     'subject' => SubjectController::class,
     'teacher' => TeacherController::class,
+    'gropu' => GropuController::class,
+    'asisten' => AsistenController::class,
 ]);
+
+/* Rutas para vistas estaticas*/
+Route::get('/acercaDe', [App\Http\Controllers\InformacionController::class, 'acercaDe'])->name('acercaDe');
+Route::get('/contacto', [App\Http\Controllers\InformacionController::class, 'contacto'])->name('contacto');
+Route::get('/politicas', [App\Http\Controllers\InformacionController::class, 'politicas'])->name('politicas');
+Route::get('/privacidad', [App\Http\Controllers\InformacionController::class, 'privacidad'])->name('privacidad');
