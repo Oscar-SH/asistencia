@@ -15,8 +15,7 @@ class AsistenController extends Controller
      */
     public function index()
     {
-        $asisten = Asisten::latest()->paginate(5);
-        $teacher = Teacher::latest()->paginate(5);
+        $asisten = Asisten::all();
         return view('asisten.index', compact('asisten'))->with('i',(request()->input('page',1)-1)*5);
     }
 

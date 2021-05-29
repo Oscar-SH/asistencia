@@ -15,14 +15,14 @@ class CreateAsistensTable extends Migration
     {
         Schema::create('asistens', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('student_id')->unsigned();
-            $table->bigInteger('subject_id')->unsigned();
-            $table->bigInteger('teacher_id')->unsigned();
-            $table->bigInteger('gropu_id')->unsigned();
-            $table->foreign('student_id')->references('id')->on('students');
-            $table->foreign('subject_id')->references('id')->on('subjects');
-            $table->foreign('teacher_id')->references('id')->on('teachers');
-            $table->foreign('gropu_id')->references('id')->on('gropus');
+            $table->bigInteger('id_students')->unsigned();
+            $table->bigInteger('id_subjects')->unsigned();
+            $table->bigInteger('id_teachers')->unsigned();
+            $table->bigInteger('id_gropus')->unsigned();
+            $table->foreign('id_students')->references('id')->on('students');
+            $table->foreign('id_subjects')->references('id')->on('subjects');
+            $table->foreign('id_teachers')->references('id')->on('teachers');
+            $table->foreign('id_gropus')->references('id')->on('gropus');
             $table->timestamps();
         });
     }
